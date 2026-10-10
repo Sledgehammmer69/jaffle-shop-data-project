@@ -1,0 +1,11 @@
+
+target/
+dbt_packages/
+logs/
+.env
+
+dashboard/.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]

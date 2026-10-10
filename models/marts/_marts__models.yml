@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "One row per order, enriched with customer details and payment metrics."
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        data_tests:
+          - not_null
+
+      - name: successful_payment_amount
+        data_tests:
+          - not_null
+
+      - name: payment_count
+        data_tests:
+          - not_null
+  
+
+  
+  - name: dim_customers
+    description: "One row per customer, with order and successful payment metrics."
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+      - name: total_orders
+        data_tests:
+          - not_null
+      - name: total_successful_payment_amount
+        data_tests:
+          - not_null
+      - name: total_payment_attempts
+        data_tests:
+          - not_null
+      - name: total_failed_payment_attempts
+        data_tests:
+          - not_null

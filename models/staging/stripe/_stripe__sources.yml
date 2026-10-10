@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: RAW
+    schema: STRIPE
+    tables:
+      - name: payment
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
